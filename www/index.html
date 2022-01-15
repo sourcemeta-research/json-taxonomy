@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>JSON Taxonomy</title>
+  <link rel="canonical" href="https://sourcemeta.github.io/json-taxonomy">
+  <meta name="description" content="A formal taxonomy to classify JSON documents based on their size, type of content, characteristics of their structure and redundancy criteria">
+  <link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+  <main class="uk-child-width-expand uk-grid-collapse uk-grid" uk-grid>
+    <div id="editor" class="uk-height-1-1"></div>
+    <div class="uk-padding-small">
+      <button id="analyze" class="uk-button uk-button-primary uk-width-1-1">Analyze JSON</button>
+
+      <div id="json-error" class="uk-alert-danger uk-margin uk-padding-small">
+        <span>The JSON document you entered is invalid. Please enter a new one and click the <b>Analyze JSON</b> button again.</span>
+      </div>
+
+      <div id="json-result" class="uk-margin-top">
+        <p class="uk-margin-small">According to the <a target="_blank" href="https://github.com/sourcemeta/json-taxonomy">taxonomy</a>, this JSON document is classified as:</p>
+        <h3 id="qualifiers" class="uk-heading-bullet uk-margin-remove-top"></h3>
+
+        <hr class="uk-divider-icon">
+        <div class="uk-flex uk-flex-row uk-flex-around">
+          <div>
+            <canvas id="chart-content-type"></canvas>
+          </div>
+          <div>
+            <canvas id="chart-byte-size"></canvas>
+          </div>
+        </div>
+        <hr class="uk-divider-icon">
+
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-small">
+          <thead>
+            <tr>
+              <th>Byte Size</th>
+              <th># Values</th>
+              <th>Height</th>
+              <th># Duplicates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="analysis.size"></td>
+              <td id="analysis.count"></td>
+              <td id="analysis.height"></td>
+              <td id="analysis.duplicates"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-small">
+          <thead>
+            <tr>
+              <th>Type of Content</th>
+              <th>% Values</th>
+              <th>% Byte Size</th>
+              <th>% Duplicated Values</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Textual</td>
+              <td id="analysis.textual.count"></td>
+              <td id="analysis.textual.size"></td>
+              <td id="analysis.textual.duplicates"></td>
+            </tr>
+            <tr>
+              <td>Numeric</td>
+              <td id="analysis.numeric.count"></td>
+              <td id="analysis.numeric.size"></td>
+              <td id="analysis.numeric.duplicates"></td>
+            </tr>
+            <tr>
+              <td>Boolean</td>
+              <td id="analysis.boolean.count"></td>
+              <td id="analysis.boolean.size"></td>
+              <td id="analysis.boolean.duplicates"></td>
+            </tr>
+            <tr>
+              <td>Structural</td>
+              <td id="analysis.structural.count"></td>
+              <td id="analysis.structural.size"></td>
+              <td id="analysis.structural.duplicates"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-small">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>% Values</th>
+              <th>% Byte Size</th>
+            </tr>
+          </thead>
+          <tbody id="analysis.levels"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.min.js"></script>
+</body>
+</html>

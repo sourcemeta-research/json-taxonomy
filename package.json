@@ -1,0 +1,28 @@
+{
+  "name": "@sourcemeta/json-taxonomy",
+  "version": "1.0.0",
+  "description": "A formal taxonomy to classify JSON documents based on their size, type of content, characteristics of their structure and redundancy criteria",
+  "main": "js/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourcemeta/json-taxonomy.git"
+  },
+  "author": "Juan Cruz Viotti <jv@jviotti.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sourcemeta/json-taxonomy/issues"
+  },
+  "homepage": "https://sourcemeta.github.io/json-taxonomy",
+  "devDependencies": {
+    "chart.js": "^3.7.0",
+    "codemirror": "^5.65.0",
+    "csso-cli": "^3.0.0",
+    "fast-check": "^2.21.0",
+    "standard": "^16.0.4",
+    "tap": "^15.1.6",
+    "uikit": "^3.10.0",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,11 @@
+main {
+  height: 100vh;
+}
+
+#editor {
+  border-right: 1px solid #ddd;
+}
+
+.CodeMirror {
+  height: 100% !important;
+}
