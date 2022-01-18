@@ -7,6 +7,8 @@ characteristics of their structure and redundancy criteria.
 
 ![JSON Taxonomy Online Tool Screenshot](./screenshot.png)
 
+Open the online demo [here](https://sourcemeta.github.io/json-taxonomy).
+
 Why is this useful?
 -------------------
 
