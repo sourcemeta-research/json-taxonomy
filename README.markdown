@@ -5,6 +5,8 @@ This project presents a formal taxonomy to classify
 [JSON](https://www.json.org) documents based on their size, type of content,
 characteristics of their structure and redundancy criteria.
 
+![JSON Taxonomy Online Tool Screenshot](./screenshot.png)
+
 Why is this useful?
 -------------------
 
