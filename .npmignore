@@ -1,2 +1,4 @@
 www
 webpack.config.js
+dist
+test
