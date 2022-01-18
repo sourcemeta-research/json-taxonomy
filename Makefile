@@ -10,6 +10,7 @@ NODE ?= node
 CAT ?= cat
 MV ?= mv
 RMRF ?= rm -rf
+RM ?= rm
 
 SRC_JS = js/analyze.js js/index.js js/json.js
 
@@ -32,6 +33,7 @@ $(OUTPUT)/style.min.css: \
 
 $(OUTPUT)/app.min.js: www/app.js node_modules $(SRC_JS) | $(OUTPUT)
 	exec $(NODE) $(word 2,$^)/webpack-cli/bin/cli.js --mode production --entry ./$< --output-path $(dir $@)
+	exec $(RM) $(dir $@)/main.js.LICENSE.txt
 	exec $(MV) $(dir $@)/main.js $@
 
 html: $(OUTPUT)/index.html $(OUTPUT)/style.min.css $(OUTPUT)/app.min.js
