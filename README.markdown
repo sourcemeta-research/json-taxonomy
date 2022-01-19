@@ -113,6 +113,23 @@ console.log(taxonomy(value))
 // [ 'tier 1', 'numeric', 'non-redundant', 'flat' ]
 ```
 
+Usage (CLI)
+-----------
+
+The published [npm](https://www.npmjs.com) package includes a simple
+command-line interface program that can be globally installed as follows:
+
+```sh
+npm install --global @sourcemeta/json-taxonomy
+```
+
+The CLI program takes the path to a JSON document as an argument and outputs
+the taxonomy to standard output:
+
+```sh
+json-taxonomy path/to/document.json
+```
+
 License
 -------
 
