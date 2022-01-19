@@ -62,8 +62,11 @@ module.exports = (value) => {
   const largestLevel = analysis.levels.slice(1).map((level, index) => {
     return { index: index + 1, ...level }
   }).sort((left, right) => {
+    return right.index - left.index
+  }).sort((left, right) => {
     return right.size - left.size
   })[0]
+
   if (textualWeight === 0 && numericWeight === 0 && booleanWeight === 0 && analysis.height >= 5) {
     qualifiers.push('nested')
   } else if (analysis.height * largestLevel.index >= 10) {
