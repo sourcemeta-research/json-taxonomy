@@ -81,13 +81,15 @@ time.
 
 - **Flat**: A JSON document is in this category if the height of the document
   multiplied by the non-root level with the largest byte-size when taking
-  textual, numeric and boolean values into account is less than 10.
+  textual, numeric and boolean values into account is less than 10. If two
+  levels have the byte size, the highest level is taken into account.
 
 - **Nested**: A JSON document is in this category if it is considered
   *structural* and its height is greater than or equal to 5, or if the height
   of the document multiplied by the non-root level with the largest byte-size
   when taking textual, numeric and boolean values into account is greater than
-  or equal to 10.
+  or equal to 10. If two levels have the byte size, the highest level is taken
+  into account.
 
 Usage (JavaScript)
 ------------------

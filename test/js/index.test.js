@@ -54,6 +54,36 @@ tap.test('should categorize the survey test object', (test) => {
   test.end()
 })
 
+tap.test('should categorize a tier 1 numeric non-redundant nested document', (test) => {
+  const document = {
+    version: 2.1,
+    workflows: {
+      test: {
+        jobs: [
+          {
+            m1: {
+              matrix: {
+                parameters: {
+                  a: [1, 2, 3]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+
+  test.strictSame(taxonomy(document), [
+    'tier 1',
+    'numeric',
+    'non-redundant',
+    'nested'
+  ])
+
+  test.end()
+})
+
 tap.test('should categorize an empty object', (test) => {
   const document = {}
 
