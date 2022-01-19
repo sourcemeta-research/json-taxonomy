@@ -1,6 +1,6 @@
 {
   "name": "@sourcemeta/json-taxonomy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A formal taxonomy to classify JSON documents based on their size, type of content, characteristics of their structure and redundancy criteria",
   "main": "js/index.js",
   "bin": {
