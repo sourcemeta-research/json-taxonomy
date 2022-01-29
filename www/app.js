@@ -169,11 +169,6 @@ function safeJSON (string) {
 }
 
 function onAnalyze (value) {
-  // For shareability purposes
-  const url = new URL(window.location.href)
-  url.searchParams.set('json', value)
-  window.history.replaceState({ value }, '', url.href)
-
   const jsonDocument = safeJSON(value)
   if (typeof jsonDocument === 'undefined') {
     document.getElementById('json-error').style.display = 'block'
@@ -186,10 +181,5 @@ function onAnalyze (value) {
 document.getElementById('analyze').addEventListener('click', () => {
   return onAnalyze(code.getValue())
 })
-
-const urlValue = new URL(window.location.href).searchParams.get('json')
-if (urlValue) {
-  code.setValue(urlValue)
-}
 
 onAnalyze(code.getValue())
