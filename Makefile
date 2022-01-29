@@ -45,6 +45,7 @@ lint: node_modules
 	exec $(NODE) $</standard/bin/cmd.js
 
 test: node_modules
-	exec $(NODE) $</tap/bin/run.js --reporter=classic --no-coverage 'test/**/*.test.js'
+	exec $(NODE) $</tap/bin/run.js --reporter=classic \
+		--no-coverage --no-timeout 'test/**/*.test.js'
 
 all: lint test html
