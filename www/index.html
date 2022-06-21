@@ -10,6 +10,19 @@
   <link rel="canonical" href="https://sourcemeta.github.io/json-taxonomy">
   <meta name="description" content="A formal taxonomy to classify JSON documents based on their size, type of content, characteristics of their structure and redundancy criteria">
   <link rel="stylesheet" href="style.min.css">
+
+  <script>
+    if (!sessionStorage.getItem("_swa") && document.referrer.indexOf(location.protocol + "//" + location.host) !== 0) {
+      fetch("https://counter.dev/track?" + new URLSearchParams({
+        referrer: document.referrer,
+        screen: screen.width + "x" + screen.height,
+        user: "jviotti",
+        utcoffset: "-4"
+      }));
+    }
+
+    sessionStorage.setItem("_swa", "1");
+  </script>
 </head>
 <body>
   <main class="uk-child-width-expand uk-grid-collapse uk-grid uk-grid-match" uk-grid>
