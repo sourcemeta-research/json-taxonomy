@@ -29,6 +29,45 @@ the data structures they represent.
 Taxonomy
 --------
 
+| Size                               | Content | Redundancy    | Structure | Acronym    |
+|------------------------------------|---------|---------------|-----------|------------|
+| Tier 1 Minified < 100 bytes        | Numeric | Redundant     | Flat      | Tier 1 NRF |
+| Tier 1 Minified < 100 bytes        | Numeric | Redundant     | Nested    | Tier 1 NRN |
+| Tier 1 Minified < 100 bytes        | Numeric | Non-Redundant | Flat      | Tier 1 NNF |
+| Tier 1 Minified < 100 bytes        | Numeric | Non-Redundant | Nested    | Tier 1 NNN |
+| Tier 1 Minified < 100 bytes        | Textual | Redundant     | Flat      | Tier 1 TRF |
+| Tier 1 Minified < 100 bytes        | Textual | Redundant     | Nested    | Tier 1 TRN |
+| Tier 1 Minified < 100 bytes        | Textual | Non-Redundant | Flat      | Tier 1 TNF |
+| Tier 1 Minified < 100 bytes        | Textual | Non-Redundant | Nested    | Tier 1 TNN |
+| Tier 1 Minified < 100 bytes        | Boolean | Redundant     | Flat      | Tier 1 BRF |
+| Tier 1 Minified < 100 bytes        | Boolean | Redundant     | Nested    | Tier 1 BRN |
+| Tier 1 Minified < 100 bytes        | Boolean | Non-Redundant | Flat      | Tier 1 BNF |
+| Tier 1 Minified < 100 bytes        | Boolean | Non-Redundant | Nested    | Tier 1 BNN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Numeric | Redundant     | Flat      | Tier 2 NRF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Numeric | Redundant     | Nested    | Tier 2 NRN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Numeric | Non-Redundant | Flat      | Tier 2 NNF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Numeric | Non-Redundant | Nested    | Tier 2 NNN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Textual | Redundant     | Flat      | Tier 2 TRF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Textual | Redundant     | Nested    | Tier 2 TRN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Textual | Non-Redundant | Flat      | Tier 2 TNF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Textual | Non-Redundant | Nested    | Tier 2 TNN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Redundant     | Flat      | Tier 2 BRF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Redundant     | Nested    | Tier 2 BRN |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Non-Redundant | Flat      | Tier 2 BNF |
+| Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Non-Redundant | Nested    | Tier 2 BNN |
+| Tier 2 Minified ≥ 1000 bytes       | Numeric | Redundant     | Flat      | Tier 3 NRF |
+| Tier 2 Minified ≥ 1000 bytes       | Numeric | Redundant     | Nested    | Tier 3 NRN |
+| Tier 2 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Flat      | Tier 3 NNF |
+| Tier 2 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Nested    | Tier 3 NNN |
+| Tier 2 Minified ≥ 1000 bytes       | Textual | Redundant     | Flat      | Tier 3 TRF |
+| Tier 2 Minified ≥ 1000 bytes       | Textual | Redundant     | Nested    | Tier 3 TRN |
+| Tier 2 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Flat      | Tier 3 TNF |
+| Tier 2 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Nested    | Tier 3 TNN |
+| Tier 2 Minified ≥ 1000 bytes       | Boolean | Redundant     | Flat      | Tier 3 BRF |
+| Tier 2 Minified ≥ 1000 bytes       | Boolean | Redundant     | Nested    | Tier 3 BRN |
+| Tier 2 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Flat      | Tier 3 BNF |
+| Tier 2 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Nested    | Tier 3 BNN |
+
 The taxonomy aims to classify JSON documents into a limited and useful set of
 categories that is easy to reason about rather than exhaustively considering
 every possible aspect of a data structure. The taxonomy categorizes JSON
