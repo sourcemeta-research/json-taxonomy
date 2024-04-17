@@ -3,6 +3,7 @@ import 'codemirror/mode/javascript/javascript'
 import { Chart } from 'chart.js/dist/chart'
 import analyze from '../js/analyze'
 import taxonomy from '..'
+/* global FileReader */
 
 // From https://arxiv.org/abs/2201.02089
 const EXAMPLE_JSON = {
@@ -178,8 +179,44 @@ function onAnalyze (value) {
   }
 }
 
-document.getElementById('analyze').addEventListener('click', () => {
-  return onAnalyze(code.getValue())
+const LoderElement = document.createElement('div')
+LoderElement.classList.add('loader')
+
+function showLoader (bool) {
+  if (bool) {
+    document.querySelector('main').appendChild(LoderElement)
+  } else {
+    document.querySelector('main').removeChild(LoderElement)
+  }
+}
+
+const __fileInput__ = document.getElementById('fileInput')
+function uploadFile () {
+  const file = __fileInput__.files[0]
+  showLoader(true)
+  if (file) {
+    code.setValue('')
+    if (file.type === 'application/json') {
+      const reader = new FileReader() // Add FileReader global comment
+      reader.onload = function (event) {
+        const contents = event.target.result
+        onAnalyze(contents)
+        showLoader(false)
+      }
+      reader.readAsText(file)
+    } else {
+      console.error('Please select a JSON file.')
+    }
+  } else {
+    onAnalyze(code.getValue())
+    showLoader(false)
+  }
+}
+
+document.getElementById('remove').addEventListener('click', () => {
+  __fileInput__.value = ''
 })
+
+document.getElementById('analyze').addEventListener('click', uploadFile)
 
 onAnalyze(code.getValue())

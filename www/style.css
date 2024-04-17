@@ -9,3 +9,32 @@
 .CodeMirror {
   height: 100% !important;
 }
+
+/* CSS styles for the loader */
+.loader {
+  /* Increase the size of the loader */
+  width: 50px; /* New width */
+  height: 50px; /* New height */
+  
+  /* Center the loader on the page */
+  position: fixed;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%);
+  
+  /* Styling */
+  border: 6px solid #666; /* Dark gray border */
+  border-top: 6px solid #2c3e50; /* Darker blue top border */
+  border-radius: 50%; /* Make it round */
+  animation: spin 1s linear infinite; /* Animation properties */
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
