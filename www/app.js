@@ -179,14 +179,14 @@ function onAnalyze (value) {
   }
 }
 
-const LoderElement = document.createElement('div')
-LoderElement.classList.add('loader')
+const LoaderElement = document.createElement('div')
+LoaderElement.classList.add('loader')
 
 function showLoader (bool) {
   if (bool) {
-    document.querySelector('main').appendChild(LoderElement)
+    document.querySelector('main').appendChild(LoaderElement)
   } else {
-    document.querySelector('main').removeChild(LoderElement)
+    document.querySelector('main').removeChild(LoaderElement)
   }
 }
 
@@ -195,9 +195,8 @@ function uploadFile () {
   const file = __fileInput__.files[0]
   showLoader(true)
   if (file) {
-    code.setValue('')
     if (file.type === 'application/json') {
-      const reader = new FileReader() // Add FileReader global comment
+      const reader = new FileReader()
       reader.onload = function (event) {
         const contents = event.target.result
         onAnalyze(contents)
@@ -208,6 +207,7 @@ function uploadFile () {
       console.error('Please select a JSON file.')
     }
   } else {
+    code.getWrapperElement().style.display = ''
     onAnalyze(code.getValue())
     showLoader(false)
   }
@@ -215,6 +215,13 @@ function uploadFile () {
 
 document.getElementById('remove').addEventListener('click', () => {
   __fileInput__.value = ''
+  code.getWrapperElement().style.display = ''
+})
+
+__fileInput__.addEventListener('change', (e) => {
+  if (e.target.files[0]) {
+    code.getWrapperElement().style.display = 'none'
+  }
 })
 
 document.getElementById('analyze').addEventListener('click', uploadFile)
