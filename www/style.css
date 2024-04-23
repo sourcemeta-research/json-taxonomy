@@ -10,26 +10,20 @@
   height: 100% !important;
 }
 
-/* CSS styles for the loader */
 .loader {
-  /* Increase the size of the loader */
-  width: 50px; /* New width */
-  height: 50px; /* New height */
-  
-  /* Center the loader on the page */
+  width: 50px; 
+  height: 50px;
   position: fixed;
-  top: 50%; /* Vertically center */
-  left: 50%; /* Horizontally center */
+  top: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
-  
-  /* Styling */
-  border: 6px solid #666; /* Dark gray border */
-  border-top: 6px solid #2c3e50; /* Darker blue top border */
-  border-radius: 50%; /* Make it round */
-  animation: spin 1s linear infinite; /* Animation properties */
+  border: 6px solid #666; 
+  border-top: 6px solid #2c3e50;
+  border-radius: 50%; 
+  animation: spin 1s linear infinite; 
 }
 
-/* Keyframes for the spinning animation */
+
 @keyframes spin {
   from {
       transform: rotate(0deg);
