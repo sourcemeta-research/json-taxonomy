@@ -181,6 +181,7 @@ function onAnalyze (value) {
 
 const LoaderElement = document.createElement('div')
 LoaderElement.classList.add('loader')
+const fileInputElement = document.getElementById('fileInput')
 
 function showLoader (bool) {
   if (bool) {
@@ -190,9 +191,8 @@ function showLoader (bool) {
   }
 }
 
-const __fileInput__ = document.getElementById('fileInput')
-function uploadFile () {
-  const file = __fileInput__.files[0]
+function analyzer () {
+  const file = fileInputElement.files[0]
   showLoader(true)
   if (file) {
     if (file.type === 'application/json') {
@@ -214,16 +214,16 @@ function uploadFile () {
 }
 
 document.getElementById('remove').addEventListener('click', () => {
-  __fileInput__.value = ''
+  fileInputElement.value = ''
   code.getWrapperElement().style.display = ''
 })
 
-__fileInput__.addEventListener('change', (e) => {
+fileInputElement.addEventListener('change', (e) => {
   if (e.target.files[0]) {
     code.getWrapperElement().style.display = 'none'
   }
 })
 
-document.getElementById('analyze').addEventListener('click', uploadFile)
+document.getElementById('analyze').addEventListener('click', analyzer)
 
 onAnalyze(code.getValue())
