@@ -186,8 +186,10 @@ const fileInputElement = document.getElementById('fileInput')
 function showLoader (bool) {
   if (bool) {
     document.querySelector('main').appendChild(LoaderElement)
+    document.getElementById('overlay').style.display = 'block'
   } else {
     document.querySelector('main').removeChild(LoaderElement)
+    document.getElementById('overlay').style.display = 'none'
   }
 }
 
