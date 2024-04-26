@@ -182,6 +182,7 @@ function onAnalyze (value) {
 const LoaderElement = document.createElement('div')
 LoaderElement.classList.add('loader')
 const fileInputElement = document.getElementById('fileInput')
+const removeBtn = document.getElementById('remove')
 
 function showLoader (bool) {
   if (bool) {
@@ -197,35 +198,36 @@ function analyzer () {
   const file = fileInputElement.files[0]
   showLoader(true)
   if (file) {
-    if (file.type === 'application/json') {
-      const reader = new FileReader()
-      reader.onload = function (event) {
-        const contents = event.target.result
-        onAnalyze(contents)
-        showLoader(false)
-      }
-      reader.readAsText(file)
-    } else {
-      console.error('Please select a JSON file.')
+    const reader = new FileReader()
+    reader.onload = function (event) {
+      const contents = event.target.result
+      onAnalyze(contents)
+      showLoader(false)
     }
+    reader.readAsText(file)
   } else {
-    code.getWrapperElement().style.display = ''
     onAnalyze(code.getValue())
     showLoader(false)
   }
 }
 
-document.getElementById('remove').addEventListener('click', () => {
+removeBtn.addEventListener('click', () => {
   fileInputElement.value = ''
-  code.getWrapperElement().style.display = ''
+  code.setValue('')
+  code.setOption('readOnly', false)
+  removeBtn.classList.add('uk-disabled')
 })
 
 fileInputElement.addEventListener('change', (e) => {
   if (e.target.files[0]) {
-    code.getWrapperElement().style.display = 'none'
+    code.setValue('Reading from input file')
+    code.setOption('readOnly', true)
+    removeBtn.classList.remove('uk-disabled')
+  } else {
+    console.log('else is clicked')
+    removeBtn.classList.add('uk-disabled')
   }
 })
 
 document.getElementById('analyze').addEventListener('click', analyzer)
-
 onAnalyze(code.getValue())
