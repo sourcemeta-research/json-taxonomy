@@ -3,6 +3,7 @@ import 'codemirror/mode/javascript/javascript'
 import { Chart } from 'chart.js/dist/chart'
 import analyze from '../js/analyze'
 import taxonomy from '..'
+/* global FileReader */
 
 // From https://arxiv.org/abs/2201.02089
 const EXAMPLE_JSON = {
@@ -178,8 +179,55 @@ function onAnalyze (value) {
   }
 }
 
-document.getElementById('analyze').addEventListener('click', () => {
-  return onAnalyze(code.getValue())
+const LoaderElement = document.createElement('div')
+LoaderElement.classList.add('loader')
+const fileInputElement = document.getElementById('fileInput')
+const removeBtn = document.getElementById('remove')
+
+function showLoader (bool) {
+  if (bool) {
+    document.querySelector('main').appendChild(LoaderElement)
+    document.getElementById('overlay').style.display = 'block'
+  } else {
+    document.querySelector('main').removeChild(LoaderElement)
+    document.getElementById('overlay').style.display = 'none'
+  }
+}
+
+function analyzer () {
+  const file = fileInputElement.files[0]
+  showLoader(true)
+  if (file) {
+    const reader = new FileReader()
+    reader.onload = function (event) {
+      const contents = event.target.result
+      onAnalyze(contents)
+      showLoader(false)
+    }
+    reader.readAsText(file)
+  } else {
+    onAnalyze(code.getValue())
+    showLoader(false)
+  }
+}
+
+removeBtn.addEventListener('click', () => {
+  fileInputElement.value = ''
+  code.setValue('')
+  code.setOption('readOnly', false)
+  removeBtn.classList.add('uk-disabled')
 })
 
+fileInputElement.addEventListener('change', (e) => {
+  if (e.target.files[0]) {
+    code.setValue('Reading from input file')
+    code.setOption('readOnly', true)
+    removeBtn.classList.remove('uk-disabled')
+  } else {
+    console.log('else is clicked')
+    removeBtn.classList.add('uk-disabled')
+  }
+})
+
+document.getElementById('analyze').addEventListener('click', analyzer)
 onAnalyze(code.getValue())
