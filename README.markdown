@@ -55,18 +55,18 @@ Taxonomy
 | Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Redundant     | Nested    | Tier 2 BRN |
 | Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Non-Redundant | Flat      | Tier 2 BNF |
 | Tier 2 Minified ≥ 100 < 1000 bytes | Boolean | Non-Redundant | Nested    | Tier 2 BNN |
-| Tier 2 Minified ≥ 1000 bytes       | Numeric | Redundant     | Flat      | Tier 3 NRF |
-| Tier 2 Minified ≥ 1000 bytes       | Numeric | Redundant     | Nested    | Tier 3 NRN |
-| Tier 2 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Flat      | Tier 3 NNF |
-| Tier 2 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Nested    | Tier 3 NNN |
-| Tier 2 Minified ≥ 1000 bytes       | Textual | Redundant     | Flat      | Tier 3 TRF |
-| Tier 2 Minified ≥ 1000 bytes       | Textual | Redundant     | Nested    | Tier 3 TRN |
-| Tier 2 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Flat      | Tier 3 TNF |
-| Tier 2 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Nested    | Tier 3 TNN |
-| Tier 2 Minified ≥ 1000 bytes       | Boolean | Redundant     | Flat      | Tier 3 BRF |
-| Tier 2 Minified ≥ 1000 bytes       | Boolean | Redundant     | Nested    | Tier 3 BRN |
-| Tier 2 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Flat      | Tier 3 BNF |
-| Tier 2 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Nested    | Tier 3 BNN |
+| Tier 3 Minified ≥ 1000 bytes       | Numeric | Redundant     | Flat      | Tier 3 NRF |
+| Tier 3 Minified ≥ 1000 bytes       | Numeric | Redundant     | Nested    | Tier 3 NRN |
+| Tier 3 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Flat      | Tier 3 NNF |
+| Tier 3 Minified ≥ 1000 bytes       | Numeric | Non-Redundant | Nested    | Tier 3 NNN |
+| Tier 3 Minified ≥ 1000 bytes       | Textual | Redundant     | Flat      | Tier 3 TRF |
+| Tier 3 Minified ≥ 1000 bytes       | Textual | Redundant     | Nested    | Tier 3 TRN |
+| Tier 3 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Flat      | Tier 3 TNF |
+| Tier 3 Minified ≥ 1000 bytes       | Textual | Non-Redundant | Nested    | Tier 3 TNN |
+| Tier 3 Minified ≥ 1000 bytes       | Boolean | Redundant     | Flat      | Tier 3 BRF |
+| Tier 3 Minified ≥ 1000 bytes       | Boolean | Redundant     | Nested    | Tier 3 BRN |
+| Tier 3 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Flat      | Tier 3 BNF |
+| Tier 3 Minified ≥ 1000 bytes       | Boolean | Non-Redundant | Nested    | Tier 3 BNN |
 
 The taxonomy aims to classify JSON documents into a limited and useful set of
 categories that is easy to reason about rather than exhaustively considering
